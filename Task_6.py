@@ -119,5 +119,5 @@ Quote 9:
 Quote 10:
   "“Life isn't about finding yourself. Life is about creating yourself.”"
   - George Bernard Shaw
-  Tags: inspirational, life, yourself
+  Tags: inspirational, life, yourself,life
 ----------------------------------------'''
