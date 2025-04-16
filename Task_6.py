@@ -44,7 +44,7 @@ def main():
     print("Welcome to the Quote Scraper!")
 
     while True:
-        # Ask the user for the page number to scrape
+        #  the user for the page number to scrape
         page_number = input("Enter the page number to scrape (or 'quit' to exit): ")
         
         if page_number.lower() == 'quit':
