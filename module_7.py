@@ -25,7 +25,8 @@ else:
 
 print("The greatest number is:", greatest)
 
-2.
+
+2.)
 # Program to check if student passed or failed
 m1 = int(input("Enter marks of subject 1: "))
 m2 = int(input("Enter marks of subject 2: "))
