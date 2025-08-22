@@ -1,0 +1,28 @@
+1.Your React app is getting slower when rendering a large list. How will you optimize it?
+Use React.memo or PureComponent to avoid unnecessary re-renders.
+Apply Windowing/Virtualization (react-window, react-virtualized) so only visible items are rendered.
+Implement pagination or infinite scroll.
+Use key props correctly to help React track elements.
+
+2.How would you handle API call retries with exponential backoff in React?
+Use Axios interceptors or custom fetch wrappers.
+Retry with setTimeout and exponential delays (2^n * baseDelay).
+Example: retry 3 times with delays (1s, 2s, 4s).
+Can integrate libraries like react-query which support retries and backoff natively.
+
+3.You have a component with heavy computations. How do you prevent unnecessary recalculations?
+Use useMemo to memoize expensive calculations.
+Use useCallback for memoizing functions passed as props.
+Offload heavy computation to a Web Worker if it blocks UI.
+
+4. A child component re-renders even when props don’t change — what’s your debugging approach?
+Check if parent is re-rendering unnecessarily.
+Use React DevTools profiler.
+Wrap child with React.memo to avoid redundant renders.
+Ensure functions/objects passed as props are memoized using useCallback / useMemo.
+
+5.How do you implement role-based authentication in a React app?
+Maintain roles in JWT tokens or session state.
+Create ProtectedRoute components (with React Router).
+Check role before rendering certain components. Example:
+{user.role === 'admin' ? <AdminPanel /> : <Unauthorized />}
