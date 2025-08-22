@@ -26,3 +26,43 @@ Maintain roles in JWT tokens or session state.
 Create ProtectedRoute components (with React Router).
 Check role before rendering certain components. Example:
 {user.role === 'admin' ? <AdminPanel /> : <Unauthorized />}
+
+6.⿦ You need to share state across deeply nested components. What options do you have?
+Context API (for simple global state).
+Redux / Zustand / Recoil (for complex state management).
+Props drilling (not recommended for deep nesting).
+Libraries like Jotai / MobX as alternatives.
+
+7.How do you handle memory leaks in React apps (like setInterval, subscriptions)?
+Use cleanup functions inside useEffect.
+Example:
+
+useEffect(() => {
+  const interval = setInterval(...);
+  return () => clearInterval(interval); // cleanup
+}, []);
+
+Unsubscribe from WebSocket, EventListeners, or Observables in cleanup.
+Use tools like Chrome DevTools to detect leaks.
+
+8.What’s your strategy for error handling at the global React app level?
+Use Error Boundaries for UI errors.
+Global error handling with libraries like React Query or Axios interceptors.
+Centralized error logging (Sentry, LogRocket).
+Fallback UI: show friendly error message instead of crashing.
+
+9.How would you design a theme switcher (dark/light mode) in React?
+Store theme in Context API / Redux.
+Toggle theme using a button and apply via CSS variables or styled-components.
+Persist preference in localStorage.
+
+Example:
+
+const [theme, setTheme] = useState("light");
+useEffect(() => document.body.className = theme, [theme]);
+
+10. Your app needs offline support — how would you implement it?
+Use Service Workers (via Workbox or CRA’s built-in support).
+Cache assets & API responses for offline use.
+Store user actions offline (IndexedDB, localStorage) and sync when back online.
+Show an offline fallback page if network fails
